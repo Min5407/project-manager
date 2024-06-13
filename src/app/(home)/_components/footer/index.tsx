@@ -1,3 +1,4 @@
+import React from 'react';
 import { Workflow } from 'lucide-react';
 import Link from 'next/link';
 

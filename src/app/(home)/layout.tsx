@@ -1,6 +1,6 @@
-import Footer from '@/components/footer';
-import Navigation from '@/components/navigation';
 import type { Metadata } from 'next';
+import Footer from './_components/footer';
+import Nav from './_components/nav';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,7 +14,7 @@ export default function HomeLayout({
 }>) {
   return (
     <>
-      <Navigation />
+      <Nav />
 
       <main className='z-[1] flex flex-1 flex-col'>{children}</main>
 
