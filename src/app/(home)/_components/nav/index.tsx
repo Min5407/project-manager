@@ -7,8 +7,9 @@ import MainList from './main_list';
 
 const Nav = () => {
   return (
-    <header className='sticky left-0 top-0 z-10 flex w-full items-center justify-between px-6 py-4 backdrop-blur-0'>
+    <header className='sticky left-0 top-0 z-10 flex w-full items-center justify-between px-6 py-4 backdrop-blur-sm'>
       <Logo />
+
       <MainList />
       <AsideList />
     </header>
