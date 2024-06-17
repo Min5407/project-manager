@@ -4,12 +4,12 @@ import Link from 'next/link';
 
 const Footer = () => {
   return (
-    <footer className=' z-10 flex items-center  justify-center border-t border-slate-800 py-8 dark:border-gray-50'>
+    <footer className='z-10 flex items-center justify-center border-t border-slate-800 py-8 dark:border-gray-50'>
       <ul className='flex flex-col gap-2'>
         <li className='text-center'>
-          <Link href='/' className='text-center inline-block'>
-            <Workflow />
-            <span className='sr-only'>Logo</span>
+          <Link href='/' className='inline-block text-center'>
+            <Workflow className='mr-2 inline-block' />
+            MeManager
           </Link>
         </li>
 
@@ -23,7 +23,7 @@ const Footer = () => {
         </li>
 
         <li>
-          <p className='inline-block '>Copyright © 2024 - All rights reserved</p>
+          <p className='inline-block'>Copyright © 2024 - All rights reserved</p>
         </li>
       </ul>
     </footer>
