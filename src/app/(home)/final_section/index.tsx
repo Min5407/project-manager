@@ -14,7 +14,7 @@ const FinalSection = () => {
       </p>
 
       <div className='my-6 text-center'>
-        <Button asChild size='lg' className='bg-purple-500 text-lg text-white'>
+        <Button asChild size='lg' className='bg-purple-500 text-lg text-white hover:bg-purple-400'>
           <Link href='/dashboard'>
             <Workflow className='mr-2 inline-block' /> Get Started
           </Link>
