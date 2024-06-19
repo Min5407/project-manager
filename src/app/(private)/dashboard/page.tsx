@@ -1,5 +1,12 @@
+import PageHeader from '@/components/page_header';
+
 const DashboardPage = () => {
-  return <div>DashboardPage</div>;
+  return (
+    <>
+      <PageHeader title='Dashboard' description='Customize Your Personal Project' />
+      <p>contents</p>
+    </>
+  );
 };
 
 export default DashboardPage;
