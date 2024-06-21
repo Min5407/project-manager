@@ -8,7 +8,7 @@ export default function PrivateLayout({
   return (
     <div className='z-[1] flex flex-1'>
       <Sidebar />
-      <div className='w-full p-6'>{children}</div>
+      <div className='flex w-full flex-col p-6'>{children}</div>
     </div>
   );
 }
