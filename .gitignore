@@ -6,6 +6,7 @@ public
 .cache
 .vscode
 .DS_Store
+.env
 .idea
 .next
 yarn-error.log
