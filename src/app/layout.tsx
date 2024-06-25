@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { DM_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/theme';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const font = DM_Sans({
   subsets: ['latin'],
@@ -18,12 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={font.className}>
+    <ClerkProvider>
+      <html lang='en'>
         <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
-          <div className='flex min-h-screen flex-col font-sans antialiased'>{children}</div>
+          <body className={font.className}>
+            <div className='flex min-h-screen flex-col font-sans antialiased'>{children}</div>
+          </body>
         </ThemeProvider>
-      </body>
-    </html>
+      </html>
+    </ClerkProvider>
   );
 }

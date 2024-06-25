@@ -12,10 +12,13 @@
     "db:studio": "prisma studio"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.1.6",
     "@hookform/resolvers": "^3.6.0",
     "@prisma/client": "5.15.1",
+    "@radix-ui/react-avatar": "^1.1.0",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-slot": "^1.0.2",
+    "@uploadcare/react-uploader": "^0.5.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
