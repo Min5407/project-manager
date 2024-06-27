@@ -21,11 +21,16 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang='en'>
-        <ThemeProvider attribute='class' defaultTheme='dark' enableSystem disableTransitionOnChange>
-          <body className={font.className}>
+        <body className={font.className}>
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='dark'
+            enableSystem
+            disableTransitionOnChange
+          >
             <div className='flex min-h-screen flex-col font-sans antialiased'>{children}</div>
-          </body>
-        </ThemeProvider>
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );

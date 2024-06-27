@@ -14,26 +14,29 @@ import {
 import { Input } from '@/components/ui/input';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
-import { z } from 'zod';
+import { useRouter } from 'next/navigation';
+import { formSchema, FormSchemaType } from './_schema';
+import { updateProfile } from './action';
 
-const schema = z.object({
-  email: z.string().email('Email is required'),
-  name: z.string().min(1, 'Name is required'),
-});
-
-type SchemaType = z.infer<typeof schema>;
-const ProfileForm = () => {
+type Props = FormSchemaType;
+const ProfileForm = ({ email, name }: Props) => {
+  const { refresh } = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<SchemaType>({
-    resolver: zodResolver(schema),
+  const form = useForm<FormSchemaType>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      email: '',
+      name,
+      email,
     },
   });
 
-  const onSubmit: SubmitHandler<SchemaType> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<FormSchemaType> = async (data) => {
+    setIsLoading(true);
+    await updateProfile({ email: data.email, name: data.name });
+    setIsLoading(false);
+    refresh();
+  };
 
   return (
     <Form {...form}>
@@ -45,9 +48,9 @@ const ProfileForm = () => {
           render={({ field }) => {
             return (
               <FormItem>
-                <FormLabel className='text-md'>User Full Name</FormLabel>
+                <FormLabel className='text-md'>User First Name</FormLabel>
                 <FormControl>
-                  <Input placeholder='name..' {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -63,7 +66,7 @@ const ProfileForm = () => {
               <FormItem>
                 <FormLabel className='text-md'> Email</FormLabel>
                 <FormControl>
-                  <Input placeholder='name..' {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
